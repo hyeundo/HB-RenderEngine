@@ -1,6 +1,8 @@
-# HB Render Engine (HB3D) — GLB 3D Model Rendering for Minecraft Fabric
+# HB Render Engine (HB3D) — High-Fidelity Animated 3D Rendering for Minecraft Fabric
 
 HB3D is an open-source, MIT-licensed 3D rendering engine for Minecraft Java Edition 1.21.4 (Fabric). It lets mod developers integrate custom binary glTF (`.glb`) models exported from Blender, including rigged characters, animated bosses and 3D world backgrounds, directly into their mod JARs.
+
+**High-fidelity character and boss rendering is a core capability of HB3D.** In-game development testing has demonstrated detailed character meshes, intricate textured wings, elaborate costumes and skeletal animation, with visually stable results reported by the developer. HB3D enables RPG-style character presentation beyond the conventional Minecraft block-model aesthetic.
 
 HB3D separates visual presentation from gameplay logic. It provides model loading, skeletal animation, GPU skinning, a CPU fallback renderer, socket queries, animation events, server-driven visuals and world backgrounds. Iris compatibility code is included; shader-pack compatibility is not guaranteed.
 
@@ -10,8 +12,8 @@ HB3D separates visual presentation from gameplay logic. It provides model loadin
 
 | Feature | What it enables |
 | --- | --- |
-| GLB model loading | Use custom 3D meshes authored in Blender instead of being limited to vanilla block-shaped models |
-| Skeletal animation and GPU skinning | Render rigged characters with animated joints; CPU fallback renderer included |
+| GLB model loading | Render highly detailed character, boss and environment meshes with their authored textures and geometry |
+| Skeletal animation and GPU skinning | Bring complex rigged RPG characters and bosses to life with skeletal animation; GPU skinning and CPU fallback renderer included |
 | Animation states and events | Map idle, movement, attack and death clips to gameplay states and receive timed events |
 | Model sockets | Query attachment transforms for weapons and visual effects |
 | Server-driven visuals | Synchronize custom boss visuals through the documented network protocol |
@@ -44,7 +46,7 @@ HB3D was developed primarily with Complementary Unbound Shaders, using Iris 1.8.
 | Sodium 0.6.9 | Development environment |
 | Complementary Reimagined and other shader packs | Not separately validated |
 
-The early development showcase above demonstrates GLB rendering and animation with Complementary Shaders enabled. The public preview smoke test did not include GLB assets. Full rendering compatibility across shader versions and settings is not guaranteed.
+The early development showcase above demonstrates GLB rendering and animation with Complementary Shaders enabled. The initial public preview smoke test did not include GLB assets. Subsequent in-game testing of the public build confirmed successful GLB model rendering. Full rendering compatibility across shader versions and settings is not guaranteed.
 
 ## Build
 
@@ -99,11 +101,11 @@ HB3D provides a boss visual synchronization protocol and an optional Paper world
 
 ### Does it work with Iris and Complementary Shaders?
 
-Complementary Unbound is the primary development shader pack. See the shader compatibility section and validation notes for the distinction between the early rendering demonstration and the asset-free public preview smoke test.
+Complementary Unbound is the primary development shader pack. See the shader compatibility section and validation notes for the early rendering demonstration, initial asset-free smoke test and subsequent successful in-game GLB rendering test.
 
 ### Is HB3D a finished production-ready engine?
 
-No. Version 0.1.0 is an experimental public preview. Fabric and Paper builds and two transform tests passed; public-preview GLB rendering, dedicated-server and Paper runtime validation remain outstanding. No performance benchmark is claimed.
+No. Version 0.1.0 is an experimental public preview. Fabric and Paper builds and two transform tests passed; in-game GLB rendering has also been verified. Dedicated-server and Paper runtime validation remain outstanding. No performance benchmark is claimed.
 
 ## Documentation
 
