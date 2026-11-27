@@ -30,7 +30,7 @@ HB3D was developed primarily with Complementary Unbound Shaders, using Iris 1.8.
 | Sodium 0.6.9 | Development environment |
 | Complementary Reimagined and other shader packs | Not separately validated |
 
-The public preview smoke test did not include GLB assets. Full rendering compatibility across shader versions and settings is not guaranteed.
+The early development showcase above demonstrates GLB rendering and animation with Complementary Shaders enabled. The public preview smoke test did not include GLB assets. Full rendering compatibility across shader versions and settings is not guaranteed.
 
 ## Build
 

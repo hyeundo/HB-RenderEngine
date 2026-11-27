@@ -8,7 +8,7 @@ Minecraft Fabric 1.21.4용 GLB 기반 3D 비주얼 런타임이다.
 
 ## 셰이더 호환성
 
-HB3D는 Iris 1.8.8 및 Sodium 0.6.9 환경에서 Complementary Unbound Shaders를 주 개발 기준으로 삼았다. 공개용 프리뷰의 게임 실행 및 월드 진입은 해당 셰이더 환경에서 검증했다. 단, 이 테스트에는 GLB 에셋이 포함되지 않았다. Complementary Reimagined 및 기타 셰이더팩은 별도로 검증하지 않았으며, 모든 버전과 설정에서의 렌더링 호환성을 보장하지 않는다.
+HB3D는 Iris 1.8.8 및 Sodium 0.6.9 환경에서 Complementary Unbound Shaders를 주 개발 기준으로 삼았다. 초기 개발 시연 영상에서도 Complementary Shaders를 활성화한 상태로 GLB 모델 렌더링 및 애니메이션을 테스트했다. 공개용 프리뷰의 게임 실행 및 월드 진입은 해당 셰이더 환경에서 검증했다. 단, 이 테스트에는 GLB 에셋이 포함되지 않았다. Complementary Reimagined 및 기타 셰이더팩은 별도로 검증하지 않았으며, 모든 버전과 설정에서의 렌더링 호환성을 보장하지 않는다.
 
 ## 빌드
 
