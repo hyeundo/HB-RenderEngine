@@ -1,6 +1,6 @@
-# HB Render Engine (HB3D)
+# HB Render Engine (HB3D) — 마인크래프트 GLB 3D 모델 렌더링 엔진
 
-Minecraft Fabric 1.21.4용 GLB 기반 3D 비주얼 런타임이다.
+Minecraft Java Edition 1.21.4 Fabric용 MIT 라이선스 오픈소스 3D 렌더링 엔진이다. Blender에서 내보낸 GLB(glTF 2.0 바이너리) 모델을 모드 JAR에 포함해 커스텀 캐릭터, 애니메이션 보스, 3D 월드 배경을 구현하는 개발자를 대상으로 한다.
 
 모델 로딩, 스켈레탈 애니메이션, GPU 스키닝, CPU 폴백, 소켓 조회, 애니메이션 이벤트, 서버 동기화 및 월드 배경 기능을 제공한다. Iris 호환 코드가 포함되어 있으나 모든 셰이더팩의 호환성을 보장하지 않는다.
 
@@ -20,7 +20,20 @@ Paper 연동 모듈은 루트에서 Gradle의 `-p paper-integration build` 옵�
 
 배포 권한이 있는 GLB 모델을 `src/main/resources/assets/<namespace>/models/`에, 모델 정의 JSON을 `src/main/resources/data/hb3d/hb3d_models/`에 넣고 빌드한다. GLB는 모드 JAR의 클래스패스에서 읽으며 일반 리소스팩을 통한 GLB 로딩은 지원하지 않는다. `Hb3dMod.getVisualApi()`를 통해 모델 바인딩, 상태 변경, 소켓 조회 및 이벤트 리스너 등록이 가능하다.
 
-상세한 요구사항과 기술 문서는 [영문 README](README.md)를 참고한다.
+## Blender 3D 모델 적용 방법
+
+1. Blender에서 모델과 필요한 애니메이션을 GLB로 내보낸다.
+2. `src/main/resources/assets/example/models/entity/character.glb`에 저장한다.
+3. [모델 정의 예제](examples/model-definition.json)를 `src/main/resources/data/hb3d/hb3d_models/example_character.json`에 복사하고 실제 애니메이션 및 노드 이름에 맞게 수정한다.
+4. Java 21로 모드를 빌드한 후 Fabric 환경에서 Java API를 통해 엔티티에 모델을 연결한다.
+
+## 자주 묻는 질문
+
+- 일반 리소스팩이나 FBX/OBJ를 바로 불러올 수 있나? 현재 파이프라인은 모드 JAR에 포함된 GLB를 사용한다. 다른 형식은 GLB로 변환해야 한다.
+- Paper 서버에서도 사용할 수 있나? 서버 동기화 프로토콜과 월드 배경 플러그인을 제공하며, 클라이언트에는 Fabric 모드와 동일한 에셋이 필요하다. 보스 AI 및 전투 로직은 별도 구현해야 한다.
+- 정식 안정 버전인가? 현재 실험적 공개 프리뷰다. 빌드 및 일부 테스트를 통과했지만 공개 빌드의 GLB 렌더링과 서버 런타임 검증은 남아 있다.
+
+상세한 요구사항과 기술 문서는 [영문 README](README.md), 검증 범위는 [릴리스 검증 기록](docs/RELEASE_VALIDATION.md)을 참고한다.
 
 ## AI 협업 개발
 

@@ -1,10 +1,24 @@
-# HB Render Engine (HB3D)
+# HB Render Engine (HB3D) — GLB 3D Model Rendering for Minecraft Fabric
 
-A GLB-based visual runtime for Minecraft Fabric 1.21.4.
+HB3D is an open-source, MIT-licensed 3D rendering engine for Minecraft Java Edition 1.21.4 (Fabric). It lets mod developers integrate custom binary glTF (`.glb`) models exported from Blender, including rigged characters, animated bosses and 3D world backgrounds, directly into their mod JARs.
 
 HB3D separates visual presentation from gameplay logic. It provides model loading, skeletal animation, GPU skinning, a CPU fallback renderer, socket queries, animation events, server-driven visuals and world backgrounds. Iris compatibility code is included; shader-pack compatibility is not guaranteed.
 
 **Status:** experimental v0.1.0. No bundled character or environment assets.
+
+## Features and use cases
+
+| Feature | What it enables |
+| --- | --- |
+| GLB model loading | Use custom 3D meshes authored in Blender instead of being limited to vanilla block-shaped models |
+| Skeletal animation and GPU skinning | Render rigged characters with animated joints; CPU fallback renderer included |
+| Animation states and events | Map idle, movement, attack and death clips to gameplay states and receive timed events |
+| Model sockets | Query attachment transforms for weapons and visual effects |
+| Server-driven visuals | Synchronize custom boss visuals through the documented network protocol |
+| World backgrounds | Place custom 3D scenery with optional Paper integration |
+| Shader compatibility | Iris compatibility implementation, developed with Complementary Unbound |
+
+HB3D targets Java mod developers and custom RPG server projects with a Fabric client mod. It is a rendering framework, not a standalone model editor or a complete boss gameplay system.
 
 ## Early development showcase
 
@@ -50,11 +64,53 @@ The Java visual API is exposed by `Hb3dMod.getVisualApi()`. It supports binding 
 
 The optional Paper plugin synchronizes world backgrounds using `/hbbackground set <model-id>`. The referenced model must be available to the client.
 
+## Quick start: how to use a Blender GLB model in Minecraft
+
+1. Export your licensed model from Blender as glTF 2.0 binary (`.glb`), including the required animation clips for an animated character.
+2. Save it as `src/main/resources/assets/example/models/entity/character.glb`.
+3. Copy [the example model definition](examples/model-definition.json) to `src/main/resources/data/hb3d/hb3d_models/example_character.json`. Match the animation clip and socket node names to your actual model.
+4. Build with `gradlew.bat build` on Windows or `./gradlew build` on Linux/macOS using Java 21.
+5. Load the resulting mod in the Fabric client environment and use the visual API from your gameplay integration to bind the model to an entity.
+
+Example Java API calls (with an existing entity ID):
+
+```java
+var visuals = Hb3dMod.getVisualApi();
+visuals.bindModel(entityId, "example_character");
+visuals.setBaseState(entityId, "idle");
+visuals.setActionState(entityId, "attack_primary", 1L);
+```
+
+These calls illustrate the API, not a complete standalone mod. Import `com.yourname.hb3d.Hb3dMod` and integrate them into your own gameplay code.
+
+## Frequently asked questions
+
+### Can I import Blender models into Minecraft without converting them to vanilla model JSON?
+
+Yes. HB3D loads binary glTF (GLB) assets directly. A separate HB3D model-definition JSON maps the asset, animation clips and sockets; it is not vanilla mesh geometry JSON.
+
+### Does HB3D load FBX, OBJ or external resource-pack GLB files?
+
+The documented model pipeline uses GLB assets embedded in the mod JAR. Direct FBX, OBJ and ordinary resource-pack GLB loading are not supported by this pipeline. Export other model formats to GLB and rebuild the mod.
+
+### Can I make animated custom bosses for a Paper server?
+
+HB3D provides a boss visual synchronization protocol and an optional Paper world-background plugin. Clients need the Fabric rendering mod and matching assets. Boss AI, combat logic and server-side boss integration are your responsibility; the included Paper plugin does not implement a complete boss system.
+
+### Does it work with Iris and Complementary Shaders?
+
+Complementary Unbound is the primary development shader pack. See the shader compatibility section and validation notes for the distinction between the early rendering demonstration and the asset-free public preview smoke test.
+
+### Is HB3D a finished production-ready engine?
+
+No. Version 0.1.0 is an experimental public preview. Fabric and Paper builds and two transform tests passed; public-preview GLB rendering, dedicated-server and Paper runtime validation remain outstanding. No performance benchmark is claimed.
+
 ## Documentation
 
 - [Runtime specification](docs/HB3D_RUNTIME_SPEC_V1.md)
 - [Boss protocol](docs/server-boss-protocol.md)
 - [World background protocol](docs/multiverse-background-protocol.md)
+- [Release validation and known test limitations](docs/RELEASE_VALIDATION.md)
 - [한국어 README](README.ko.md)
 
 ## AI-assisted development
