@@ -22,9 +22,19 @@ HB3D separates visual presentation from gameplay logic. It provides model loadin
 
 HB3D targets Java mod developers and custom RPG server projects with a Fabric client mod. It is a rendering framework, not a standalone model editor or a complete boss gameplay system.
 
-## Early development showcase
+## In-game showcases
 
-[Watch the original technical demonstration on YouTube](https://www.youtube.com/watch?v=dkFnCKsmeX0)
+### High-fidelity rendering and animation
+
+[Watch the rendering and animation showcase on YouTube](https://www.youtube.com/watch?v=4qZ8JpoBcFA)
+
+This demonstration focuses on the visual quality of detailed GLB character models and natural skeletal animation playback directly in Minecraft with Complementary Shaders enabled.
+
+### Raid gameplay demonstration
+
+[Watch the original raid gameplay demonstration on YouTube](https://www.youtube.com/watch?v=dkFnCKsmeX0)
+
+This earlier demonstration showcases the engine in the context of a custom raid encounter.
 
 HB3D began as a technical experiment for a FINAL FANTASY XIV fan project in Minecraft and evolved into a general-purpose GLB rendering engine. The early demonstration contains third-party game assets used during development. Those assets have been removed from the public source and distribution builds and are not covered by the MIT license. This independent project is not affiliated with or endorsed by Square Enix.
 
@@ -46,7 +56,7 @@ HB3D was developed primarily with Complementary Unbound Shaders, using Iris 1.8.
 | Sodium 0.6.9 | Development environment |
 | Complementary Reimagined and other shader packs | Not separately validated |
 
-The early development showcase above demonstrates GLB rendering and animation with Complementary Shaders enabled. The initial public preview smoke test did not include GLB assets. Subsequent in-game testing of the public build confirmed successful GLB model rendering. Full rendering compatibility across shader versions and settings is not guaranteed.
+The rendering and animation showcase above demonstrates detailed GLB models and natural animation playback with Complementary Shaders enabled. The initial public preview smoke test did not include GLB assets. Subsequent in-game testing of the public build confirmed successful GLB model rendering. Full rendering compatibility across shader versions and settings is not guaranteed.
 
 ## Build
 

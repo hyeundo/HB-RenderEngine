@@ -8,6 +8,20 @@ Minecraft Java Edition 1.21.4 Fabric용 MIT 라이선스 오픈소스 3D 렌더�
 
 현재 실험적 버전(v0.1.0)이며 캐릭터 및 배경 모델은 포함하지 않는다.
 
+## 인게임 시연 영상
+
+### 고품질 렌더링 및 애니메이션 시연
+
+[렌더링 및 애니메이션 시연 영상 보기](https://www.youtube.com/watch?v=4qZ8JpoBcFA)
+
+Complementary Shaders를 활성화한 실제 마인크래프트 환경에서 정교한 GLB 캐릭터 모델의 렌더링 품질과 자연스러운 스켈레탈 애니메이션을 확인하기 위한 시연 영상이다.
+
+### 레이드 플레이 시연
+
+[기존 레이드 데모 영상 보기](https://www.youtube.com/watch?v=dkFnCKsmeX0)
+
+커스텀 레이드 콘텐츠에 엔진을 적용한 초기 개발 시연이다. 시연에 사용된 제3자 게임 에셋은 공개 소스 및 배포 빌드에 포함되지 않는다.
+
 ## 셰이더 호환성
 
 HB3D는 Iris 1.8.8 및 Sodium 0.6.9 환경에서 Complementary Unbound Shaders를 주 개발 기준으로 삼았다. 초기 개발 시연 영상에서도 Complementary Shaders를 활성화한 상태로 GLB 모델 렌더링 및 애니메이션을 테스트했다. 공개용 프리뷰의 게임 실행 및 월드 진입은 해당 셰이더 환경에서 검증했다. 초기 테스트에는 GLB 에셋이 포함되지 않았으나, 이후 공개 빌드의 인게임 테스트에서 GLB 모델이 정상적으로 렌더링되는 것을 확인했다. Complementary Reimagined 및 기타 셰이더팩은 별도로 검증하지 않았으며, 모든 버전과 설정에서의 렌더링 호환성을 보장하지 않는다.
