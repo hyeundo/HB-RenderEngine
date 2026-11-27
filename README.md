@@ -34,9 +34,9 @@ This demonstration focuses on the visual quality of detailed GLB character model
 
 [Watch the original raid gameplay demonstration on YouTube](https://www.youtube.com/watch?v=dkFnCKsmeX0)
 
-This earlier demonstration showcases the engine in the context of a custom raid encounter.
+This proof-of-concept raid demonstrates how developers can use HB3D as a rendering foundation for custom RPG encounters. The raid gameplay itself is an example integration, not a bundled gameplay feature.
 
-HB3D began as a technical experiment for a FINAL FANTASY XIV fan project in Minecraft and evolved into a general-purpose GLB rendering engine. The early demonstration contains third-party game assets used during development. Those assets have been removed from the public source and distribution builds and are not covered by the MIT license. This independent project is not affiliated with or endorsed by Square Enix.
+HB3D began as a technical experiment for a FINAL FANTASY XIV fan project in Minecraft and evolved into a general-purpose GLB rendering engine. Both showcase videos feature Titania assets from FINAL FANTASY XIV as third-party visual test assets. They illustrate the engine's rendering capabilities and potential applications, not original HB3D character assets. Those assets have been removed from the public source and distribution builds and are not covered by the MIT license. This independent project is not affiliated with or endorsed by Square Enix.
 
 ## Requirements
 
