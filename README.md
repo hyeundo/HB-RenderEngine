@@ -19,7 +19,18 @@ HB3D began as a technical experiment for a FINAL FANTASY XIV fan project in Mine
 - Fabric Loader 0.16.10 or later
 - Fabric API for Minecraft 1.21.4
 
-The development configuration also includes Iris 1.8.8 and Sodium 0.6.9.
+## Shader compatibility
+
+HB3D was developed primarily with Complementary Unbound Shaders, using Iris 1.8.8 and Sodium 0.6.9.
+
+| Component | Status |
+| --- | --- |
+| Complementary Unbound | Primary development shader pack; public preview startup and world entry verified |
+| Iris 1.8.8 | Compatibility implementation |
+| Sodium 0.6.9 | Development environment |
+| Complementary Reimagined and other shader packs | Not separately validated |
+
+The public preview smoke test did not include GLB assets. Full rendering compatibility across shader versions and settings is not guaranteed.
 
 ## Build
 
