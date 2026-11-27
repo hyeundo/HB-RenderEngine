@@ -1,0 +1,15 @@
+name: HB3DWorldBackground
+version: 1.0.0
+main: com.yourname.hb3d.paper.Hb3dWorldBackgroundPlugin
+api-version: '1.21'
+softdepend: [Multiverse-Core]
+authors: [HB]
+commands:
+  hbbackground:
+    description: Configure the HB3D GLB background for the current Multiverse world
+    usage: /hbbackground <set|position|scale|rotation|enable|disable|status|reload>
+    aliases: [hbbg]
+    permission: hb3d.background.admin
+permissions:
+  hb3d.background.admin:
+    default: op

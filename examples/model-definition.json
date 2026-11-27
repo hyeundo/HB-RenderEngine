@@ -1,0 +1,44 @@
+{
+  "modelId": "example_character",
+  "glb": "example:models/entity/character.glb",
+  "renderScale": 1,
+  "states": {
+    "base": {
+      "idle": "Idle",
+      "walk": "Walk",
+      "run": "Run"
+    },
+    "action": {
+      "attack_primary": "Attack",
+      "hit": "Hit",
+      "death": "Death"
+    }
+  },
+  "sockets": {
+    "root": "Root",
+    "right_hand": "RightHand"
+  },
+  "events": {
+    "Attack": [
+      {
+        "time": 0.3,
+        "name": "impact"
+      }
+    ]
+  },
+  "playback": {
+    "loop": [
+      "Idle",
+      "Walk",
+      "Run"
+    ],
+    "holdLastFrame": [
+      "Death"
+    ]
+  },
+  "transitions": {
+    "defaultTicks": 4,
+    "actionTicks": 2,
+    "deathTicks": 1
+  }
+}

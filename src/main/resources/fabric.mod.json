@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "hb3d",
+  "version": "${version}",
+  "name": "HB_Renderengine",
+  "description": "HB_Renderengine GLB visual runtime for Fabric 1.21.4.",
+  "authors": [
+    "HB"
+  ],
+  "contributors": ["OpenAI Codex (AI-assisted development)"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.yourname.hb3d.Hb3dMod"
+    ],
+    "client": [
+      "com.yourname.hb3d.Hb3dClientMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

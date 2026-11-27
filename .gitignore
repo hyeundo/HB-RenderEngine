@@ -1,0 +1,11 @@
+.gradle/
+build/
+out/
+run/
+.idea/
+.codegraph/
+*.iml
+*.class
+*.log
+armature_bones.txt
+.env
